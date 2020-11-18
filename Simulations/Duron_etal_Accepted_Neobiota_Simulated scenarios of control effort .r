@@ -4,7 +4,7 @@
 
 library("sp")
 
-# function to capture probability per day at trap location
+# function to compute capture probability per day at trap location
 p.trap<- function(trap.x, trap.y, HR.x, HR.y, HR.sigma, g0){
   p0<- dnorm(0, 0, HR.sigma)^2
   1 - prod(1 - dnorm(trap.x, HR.x, HR.sigma) * dnorm(trap.y, HR.y, HR.sigma) * g0 / p0)
